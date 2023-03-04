@@ -27,7 +27,7 @@ function App() {
 
   function toggleCompleted(id) {
     const updatedTodos = todos.map(todo => {
-      if (id == todo.id) {
+      if (id === todo.id) {
         return { ...todo, completed: !todo.completed };
       }
       return todo;
@@ -42,7 +42,7 @@ function App() {
 
   function onEdit(id, newName) {
     const updatedTodos = todos.map(todo => {
-      if (id == todo.id) {
+      if (id === todo.id) {
         return { ...todo, name: newName };
       }
       return todo;
@@ -66,7 +66,6 @@ function App() {
       </div>
       <h2 id="list-heading">{todos.filter(FILTER_MAP[filter]).length} todos in {filter} list</h2>
       <ul
-        role="list"
         className="todo-list stack-large stack-exception"
         aria-labelledby="list-heading">
         {todos
